@@ -1,0 +1,20 @@
+{
+    "name": "instapaper-add-bookmark",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "publishConfig": {
+        "registry": "http://sinopia:4873"
+    },
+    "author": "Someone Somewhere",
+    "license": "ISC",
+    "dependencies": {
+        "lodash": "^3.5.0",
+        "oauth-1.0a": "^0.2.1",
+        "restler": "^3.2.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:betaworks/process-modules.git#instapaper-add-bookmark"
+    }
+}

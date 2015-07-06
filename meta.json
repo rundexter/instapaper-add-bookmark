@@ -1,0 +1,35 @@
+/*
+ * Metadata describing the module operation
+ */
+{
+    //Required. Inputs the module expects.
+    "inputs": [{
+        "id": "url",
+        "title":"URL",
+        "type":"string"
+    }],
+    //Required. Outputs the module emits.
+    "outputs": [
+        {
+            "id": "statusCode",
+            "title":"Status Code",
+            "type":"integer"
+        }, {
+            "id": "contentLocation",
+            "title":"Content Location",
+            "type":"string"
+        }, {
+            "id": "title",
+            "title":"Title",
+            "type":"string"
+        }, {
+            "id": "bookmarkId",
+            "title":"Bookmark ID",
+            "type":"string"
+        }
+    ],
+    "providers": [
+        "instapaper"
+    ],
+    "title": "Instapaper Add Bookmark" /* Required.A display name for the module */
+}
