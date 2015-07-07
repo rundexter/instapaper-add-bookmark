@@ -14,11 +14,9 @@ module.exports = {
         });
 
       var self  = this
-        , consumer_key    = this.environment('instapaper_consumer_key')
-        , consumer_secret = this.environment('instapaper_consumer_secret')
-        , access_token    = dexter.wfdata.simulation
-            ? JSON.parse(require('./fixtures/env').providers.instapaper.access_token)
-            : JSON.parse(dexter.provider('instapaper.access_token'))
+        , consumer_key    = dexter.environment('instapaper_consumer_key')
+        , consumer_secret = dexter.environment('instapaper_consumer_secret')
+        , access_token    = dexter.user('providers.instapaper.access_token')
         , token_key       = access_token.oauth_token
         , token_secret    = access_token.oauth_token_secret
         , url             = 'https://www.instapaper.com/api/1/bookmarks/add'
@@ -42,6 +40,14 @@ module.exports = {
             }, token))
         }
       ;
+
+      if(!access_token)    self.fail({message: 'User has not authorized instapaper'});
+      if(!consumer_key)    self.fail({message: 'App needs an instapaper_consumer_key defined'});
+      if(!consumer_secret) self.fail({message: 'App needs an instapaper_consumer_secret defined'});
+
+      self.log('POSTING TO INSTAPAPER', {
+          data: step.inputs()
+      });
         
       rest.post(url, postData).on('complete', function(result, response) {
         try {
@@ -52,7 +58,8 @@ module.exports = {
                     oauth       : oauth, 
                     token       : token,
                     data        : result,
-                    input       : step.inputs()
+                    input       : step.inputs(),
+                    message     : 'Invalid status code: ' + response.statusCode
                 });
             }
               
