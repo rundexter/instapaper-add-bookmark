@@ -3,30 +3,70 @@ var _   = require('lodash')
 ;
 
 module.exports = _.merge({
-    "internals": {
-        /*
-         * SAMPLE DATA 
-         *
-         * These properties will be set by the engine when your step is called.
-         */
-        "instance": {
-            "id": "i962a3ce-883b-4976-a583-29440a7f638d",
-            "isTest": true // will be false when run by the workflow engine
+    /*
+     * Some default settings. 
+     *
+     * You can generally leave this as is for general testing purposes.
+     */
+    simulation: true
+    , instance_id: 'local_test_instance'
+    , urls: {
+        home: "http://rundexter.com/"
+    }
+    , instance_state: {
+        active_step :  "local_test_step"
+    }
+    , workflow: {
+        "id" : "local_test_workflow"
+        , "title": "Local test workflow"
+        , "description": "A fixture workflow used to test a module"
+    }
+    , steps: {
+        local_test_step: {
+            id: 'local_test_step'
+            , type: 'module'
+            //The test runner will change YOUR_MODULE_NAME to the correct module name
+            , name: 'YOUR_MODULE_NAME'
+            , next: []
         }
-        ,"workflow": {
-            "id": "w962a3ce-883b-4976-a583-29440a7f638d"
-        }
-        ,"step": {
-            "id": "s962a3ce-883b-4976-a583-29440a7f638d"
-        }
-    },
-    "input": {
-       "url": "http://io9.com/5985580/dont-be-fooled-dolphins-are-actually-huge-assholes"
-    },
-    "settings": {
+    }
+    , modules: {
+        //The test runner will add the proper data here
+    }
+    , environment: {
        /*
-        * settings data passed to the step
-        * "mustache": "A sample {mustache} template"
+        * Any API keys you might need should go in the env.js.
+        * For example:
+        *
+        "parse_app_id": "abc123"
+        , "parse_app_key": "foobar"
         */
     }
-});
+    , user: {
+        /*
+         * Your dexter user settings should go in the env.js file and remain uncommitted.  
+         * For example:
+         *
+        profile: {
+            id: 1,
+            api_key: 'apikeytest'
+        }
+        , providers: {
+            instapaper: {
+                access_token: "{\"oauth_token_secret\":\"instapaper_access_code\",\"oauth_token\":\"1234567890\"}"
+            }
+        }
+         */
+    }
+    , data: {
+        local_test_step: {
+            /*
+             * You should update this section with some test input for testing your module
+             */
+            input: {
+                //Replace VAR1 with the name of an expected input, and add more inputs as needed.
+                url: "http://io9.com/5985580/dont-be-fooled-dolphins-are-actually-huge-assholes"
+            }
+        }
+    }
+}, env);
