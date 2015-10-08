@@ -6,8 +6,8 @@
     "publishConfig": {
         "registry": "http://sinopia:4873"
     },
-    "author": "Someone Somewhere",
-    "license": "ISC",
+    "author": "Run Dexter, Inc.",
+    "license": "MIT",
     "dependencies": {
         "lodash": "^3.5.0",
         "oauth-1.0a": "^0.2.1",
