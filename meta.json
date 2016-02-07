@@ -6,6 +6,9 @@
     "inputs": [{
         "id": "url",
         "title":"URL"
+    }, {
+        "id": "folder_id",
+        "title":"Folder ID"
     }],
     //Required. Outputs the module emits.
     "outputs": [{ 
