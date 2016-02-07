@@ -5,31 +5,16 @@
     //Required. Inputs the module expects.
     "inputs": [{
         "id": "url",
-        "title":"URL",
-        "type":"string"
+        "title":"URL"
     }],
     //Required. Outputs the module emits.
-    "outputs": [
-        {
-            "id": "statusCode",
-            "title":"Status Code",
-            "type":"integer"
-        }, {
-            "id": "contentLocation",
-            "title":"Content Location",
-            "type":"string"
-        }, {
-            "id": "title",
-            "title":"Title",
-            "type":"string"
-        }, {
-            "id": "bookmarkId",
-            "title":"Bookmark ID",
-            "type":"string"
-        }
-    ],
+    "outputs": [{ 
+        "id": "bookmark_id",
+        "title": "Bookmark ID"
+    }],
     "providers": [
         "instapaper"
     ],
-    "title": "Instapaper Add Bookmark" /* Required.A display name for the module */
+    "title": "Instapaper Add Bookmark", /* Required.A display name for the module */
+    "icon" : "dex-instapaper"
 }

@@ -1,20 +1,20 @@
 {
-    "name": "instapaper-add-bookmark",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
-    "publishConfig": {
-        "registry": "http://sinopia:4873"
-    },
-    "author": "Run Dexter, Inc.",
-    "license": "MIT",
-    "dependencies": {
-        "lodash": "^3.5.0",
-        "oauth-1.0a": "^0.2.1",
-        "restler": "^3.2.2"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:betaworks/process-modules.git#instapaper-add-bookmark"
-    }
+  "name": "instapaper-add-bookmark",
+  "version": "0.0.1",
+  "description": "Add a bookmark to your instapaper queue",
+  "main": "index.js",
+  "author": "Run Dexter, Inc",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "instapaper": "^1.1.0",
+    "lodash": "^3.10.1",
+    "oauth-1.0a": "^0.2.1",
+    "q": "^1.4.1",
+    "restler": "^3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rundexter/instapaper-add-bookmark"
+  }
 }
